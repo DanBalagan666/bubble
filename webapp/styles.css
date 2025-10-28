@@ -1,0 +1,44 @@
+:root{
+  --bg:#050207; --panel:#0b0b0d; --accent1:#ff33cc; --accent2:#a855ff; --text:#f4f4f8; --muted:#bfbcc4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% 0%, #140022, #050007 85%);font-family:Inter, Poppins, system-ui;color:var(--text)}
+.app{max-width:1000px;margin:24px auto;padding:16px}
+.app-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.logo{font-weight:800;color:var(--accent1);font-size:20px}
+.toplinks a{color:var(--muted);margin-left:14px;text-decoration:none}
+.content{display:grid;grid-template-columns:1fr 320px;gap:18px}
+.catalog h2{color:var(--accent2);margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:8px;display:flex;flex-direction:column;min-height:220px;position:relative}
+.imgwrap{height:120px;overflow:hidden;border-radius:8px;margin-bottom:8px}
+.imgwrap img{width:100%;height:100%;object-fit:cover;display:block}
+.title{font-weight:700;margin-bottom:4px;white-space:normal}
+.meta{color:var(--muted);font-size:13px;margin-bottom:6px}
+.price{font-weight:800;color:var(--accent1);position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.35);padding:6px 8px;border-radius:8px}
+.card .actions{margin-top:auto;display:flex;gap:8px}
+.btn{padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#000;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.cart{background:rgba(255,255,255,0.02);padding:12px;border-radius:12px;position:sticky;top:20px;height:max-content}
+.cart-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+#cart-items .row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+.qty{display:flex;gap:6px;align-items:center}
+.small{font-size:13px;color:var(--muted)}
+footer.app-footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+/* Mobile: 3 cards in a row, but keep images not too tall */
+@media (max-width: 768px){
+  .content{grid-template-columns:1fr;gap:12px}
+  .grid{grid-template-columns:repeat(3, 1fr);gap:8px}
+  .imgwrap{height:90px}
+  .cart{order:2;position:static}
+  .app{padding:10px}
+  .card{min-height:180px;padding:6px}
+  .btn{padding:6px 8px;font-size:13px}
+  .price{font-size:13px;padding:4px 6px}
+  .title{font-size:14px}
+}
+@media (max-width:420px){
+  .grid{grid-template-columns:repeat(2, 1fr)}
+}
