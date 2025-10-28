@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Bubble miniapp"
+
+git remote add origin git@github.com:you/your-repo.git
+git push -u origin main
