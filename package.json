@@ -1,0 +1,19 @@
+{
+  "name": "bubble-coffee-miniapp",
+  "version": "1.0.0",
+  "description": "Mini App + Telegram bot skeleton for BUBBLE Coffee (demo).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "bot": "node bot.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "node-fetch": "^2.6.7",
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.22",
+    "node-telegram-bot-api": "^0.61.0",
+    "ejs": "^3.1.9"
+  }
+}
