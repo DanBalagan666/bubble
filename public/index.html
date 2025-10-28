@@ -1,7 +1,15 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
+ <script>
+  // эти значения замени на реальные перед деплоем,
+  // или Render можно настроить так, чтобы подставить ENV в HTML на сервере.
+  window.API_BASE = ''; // если сервер тот же домен
+  window.API_KEY = 'some-secret-api-key'; // должен совпадать с .env API_KEY
+  window.DRINKS = null; // если хочешь — fetch('/drinks.json') в клиенте
+</script>
+<script src="/app.js"></script>
+ <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BUBBLE Coffee — Mini App</title>
   <link rel="stylesheet" href="styles.css" />
