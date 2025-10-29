@@ -1,0 +1,17 @@
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { pool } from './db.mjs';
+import menuRoutes from './routes/menu.mjs';
+import ordersRoutes from './routes/orders.mjs';
+import usersRoutes from './routes/users.mjs';
+dotenv.config();
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use('/api/menu', menuRoutes);
+app.use('/api/orders', ordersRoutes);
+app.use('/api/users', usersRoutes);
+app.get('/', (req, res)=> res.send('☕ Bubble Coffee API работает!'));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, ()=> console.log(`✅ Сервер запущен на порту ${PORT}`));

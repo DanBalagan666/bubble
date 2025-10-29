@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  phone VARCHAR(20) UNIQUE NOT NULL,
+  bonus_count INTEGER DEFAULT 0
+);
+CREATE TABLE IF NOT EXISTS menu (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  price INTEGER,
+  image TEXT
+);
+CREATE TABLE IF NOT EXISTS orders (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  items JSONB,
+  total INTEGER,
+  delivery_type VARCHAR(50),
+  created_at TIMESTAMP DEFAULT NOW()
+);
